@@ -1,0 +1,35 @@
+﻿{
+	"product_description": "vSphere Storage for Kubernetes",
+	"product_version": "1.9.x",
+	"reference_url": "https://vmware.github.io/vsphere-storage-for-kubernetes/documentation/vcp-roles.html",
+	"vendor": "VMware",
+	"vcenter_schema": "6.7",
+    "roles":[
+        {
+            "name": "manage-k8s-node-vms",
+            "privileges": [
+                "Resource.AssignVMToPool",
+                "VirtualMachine.Config.AddExistingDisk",
+                "VirtualMachine.Config.AddNewDisk",
+                "VirtualMachine.Config.AddRemoveDevice",
+                "VirtualMachine.Config.RemoveDisk",
+                "VirtualMachine.Inventory.Create",
+                "VirtualMachine.Inventory.Delete",
+                "VirtualMachine.Config.Settings"
+            ]
+        },
+        {
+            "name": "manage-k8s-volumes",
+            "privileges": [
+                "Datastore.FileManagement",
+                "Datastore.AllocateSpace"
+            ]
+        },
+        {
+            "name": "k8s-system-read-and-spbm-profile-view",
+            "privileges": [
+                "StorageProfile.View"
+            ]
+        }
+    ]
+}
