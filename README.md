@@ -3,10 +3,19 @@ Create vCenter Server roles from a JSON file.
 
 # Usage
 Import pre-defined roles for common applications to access vCenter. The privileges for each role are stored in a JSON-format file as a list of privilege Ids (`Get-VIPrivilege | Select Id`).
-
+    
+    # Import a signle role without overwriting the role if it exists.
     Import-VIRole -RolePath C:\Roles\admin.json -Overwrite:$false
 
+    # Import multiple roles without overwriting the role if it exists.
+    Import-VIRole -RolePath C:\Roles\*.json -Overwrite:$false
+
+    # Import multiple roles and overwrite them if they exist.
+    Import-VIRole -RolePath C:\Roles\*.json -Overwrite:$false
+
 Some pre-defined privilege sets are provided in this repo's `\Roles` directory, but the cmdlet accepts any valid JSON file as an argument.
+
+Roles may also be combined into a single file if desired to fascilitate infrastructure configuration management.
 
 If necessary, roles can be removed with `Remove-VIRole` when connected to the appropriate vCenter server.
 
