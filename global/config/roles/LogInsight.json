@@ -6,7 +6,7 @@
 	"vcenter_schema": "7.0",
     "roles":[
         {
-            "name": "CloudAdmin",
+            "name": "Log Insight",
             "privileges": [
                 "System.Anonymous",
                 "System.View",
